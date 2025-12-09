@@ -1,0 +1,29 @@
+name: Prática de pipeline
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Versão Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Informações sobre node e npm
+        run: |
+          node --version
+          npm --version
+
+      - name: Comandos
+        run: |
+          echo "Pipeline executada com sucesso!"
+          echo "Listando arquivos do projeto:"
+          ls -la
