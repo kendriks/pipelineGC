@@ -17,6 +17,13 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Script
+        run: |
+          echo "Iniciando script..."
+          DATA=$(date)
+          echo "Data atual: $DATA"
+          echo "Script finalizado!"
+
       - name: Informações sobre node e npm
         run: |
           node --version
